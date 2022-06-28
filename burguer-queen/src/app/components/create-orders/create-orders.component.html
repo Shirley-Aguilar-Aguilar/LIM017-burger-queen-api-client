@@ -1,2 +1,6 @@
 <app-header></app-header>
 <p>create-orders works!</p>
+<div class="list-products">
+  <app-products [products]="products" *ngFor="let products of listProducts"></app-products>
+</div>
+
