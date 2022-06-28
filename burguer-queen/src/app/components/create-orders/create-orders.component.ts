@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from 'src/app/rest.service';
 
 @Component({
   selector: 'app-create-orders',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-orders.component.css']
 })
 export class CreateOrdersComponent implements OnInit {
+  public listProducts:any = [];
 
-  constructor() { }
+  constructor(private RestService:RestService) { }
 
   ngOnInit(): void {
+    this.getProducts();
   }
 
+  public getProducts(){
+    this.RestService.get('products')
+    .subscribe(response => {
+      this.listProducts = response;
+    })
+  }
 }
