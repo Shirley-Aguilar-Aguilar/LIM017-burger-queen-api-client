@@ -1,0 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Pacifico&family=Sanchez:ital@1&display=swap');
+*{
+    border:0;
+    margin:0;
+    padding:0;
+}
+.loginContainer {
+    background: url('../../../assets/fondo.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 20px;text-shadow: 2px 2px 2px grey;
+
+}
+.formContainer{
+    width:auto;
+    background-color: rgba(208, 215, 221, 0.897);
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px gray;
+    text-align: center;
+    padding: 30px;
+
+}
+.formContainer input {
+    font-family: 'Amaranth', sans-serif;
+    padding: 10px;
+    width:250px;
+    border-radius: 4px;
+    margin:10px;
+    font-size: medium;
+    box-shadow: 3px 3px 3px gray;
+}
+.formContainer img {
+    height: 200px;
+    
+}
+.formContainer button {
+    font-family: 'Amaranth', sans-serif;
+    padding: 10px;
+    width:150px;
+    border-radius: 5px;
+    margin:10px;
+    font-size: medium;
+    box-shadow: 3px 3px 3px gray;
+    background-color: chocolate;
+    font-size: large;
+    margin:10px;
+}
