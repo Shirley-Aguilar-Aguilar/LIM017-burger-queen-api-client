@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Pacifico&family=Sanchez:ital@1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+header{
+    background-color:#263238;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 15px;
+    display:flex;
+    padding:10px;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    
+}
+header img {
+    height: 85px;
+}
+nav ul li {
+    display: inline;
+    margin:10px;
+    color:black   
+}
+nav ul li a{
+    text-decoration: none;
+    color:rgb(196, 139, 66);
+    padding:10px; 
+}
+.containerUser {
+    display: flex;
+    margin:5px;
+    flex-direction:column;
+    color:rgb(196, 139, 66);
+    align-items: center;
+    
+}
+.containerUser img {
+    height: auto;
+    width: 35px;
+    background:white;
+    border-radius:15px;
+}
+nav ul li a:hover{
+    border-radius:3px;
+   background-color: white;
+   color: black;
+   padding:10px
+
+}
+

@@ -5,11 +5,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RestService {
-  public host:string = 'http://localhost:8090/'
+  public host:string = 'http://localhost:8080/'
   constructor(private http: HttpClient) { }
   
   public get(url:string){
-    const headers = new HttpHeaders().set("access-token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGVzIjp0cnVlLCJpYXQiOjE2NTYzODYzODksImV4cCI6MTY1NjM5NjQ2OX0.4wBXQHGK0rgEW3NKtCSURM-2va_puxIlhpBjqgT27Nw");
+    const headers = new HttpHeaders().set("access-token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGVzIjp0cnVlLCJpYXQiOjE2NTYzOTMwNTcsImV4cCI6MTY1NjQwMzEzN30.JAXLQjPvikJ8r63bFoVLraKbyxfcEetMpevsA5h2Da4");
     return this.http.get(this.host+url, { headers });
   }
 }
