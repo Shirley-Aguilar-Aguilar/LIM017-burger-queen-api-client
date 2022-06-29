@@ -2,15 +2,14 @@
     <div class="formContainer">
         <img src="../../assets/logo2.png" alt="logo">
         <h2>Iniciar Sesión</h2>
-        <form>
-            <label>Ingrese su correo</label>
+        <form #form="ngForm" (ngSubmit)="login(form)">
+            <p>Ingrese su correo</p>
+            <input type="email" name ="email" placeholder="example@gmail.com" ngModel required #email="ngModel" />
+            <p>Ingrese su contraseña</p>
+            <input type="password" name ="password"  placeholder="contraseña" ngModel required #password="ngModel"/>
             <br/>
-            <input placeholder="example@gmail.com"/>
-            <br/>
-            <label>Ingrese su contraseña</label>
-            <br/>
-            <input placeholder="contraseña"/>
+            <button>Ingresar</button>
         </form>
-        <button>Ingresar</button>
+
     </div>
 </div>
