@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { navbarData } from './nav-header';
 
 @Component({
   selector: 'app-header',
@@ -11,5 +12,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  navData = navbarData;
 
 }
