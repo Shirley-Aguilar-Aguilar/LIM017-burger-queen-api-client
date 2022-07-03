@@ -6,11 +6,15 @@ import { StateOrdersComponent } from './components/state-orders/state-orders.com
 import { HeaderComponent } from './components/header/header.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProductsComponent } from './components/create-orders/products/products.component';
+import { BodyComponent } from './components/body/body.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
+    children: [{
+      path: 'body', component: BodyComponent,
+    }],
   },
   {
     path: 'create-orders',
