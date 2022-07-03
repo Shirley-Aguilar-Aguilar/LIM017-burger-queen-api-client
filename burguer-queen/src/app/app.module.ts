@@ -10,7 +10,8 @@ import { CreateOrdersComponent } from './components/create-orders/create-orders.
 import { StateOrdersComponent } from './components/state-orders/state-orders.component';
 import { ProductsComponent } from './components/create-orders/products/products.component';
 import { UsersComponent } from './components/users/users.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BodyComponent } from './components/body/body.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,15 @@ import { FormsModule } from '@angular/forms';
     CreateOrdersComponent,
     StateOrdersComponent,
     ProductsComponent,
-    UsersComponent
+    UsersComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
