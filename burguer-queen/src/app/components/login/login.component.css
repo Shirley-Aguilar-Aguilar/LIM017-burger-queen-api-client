@@ -73,5 +73,5 @@
 }
 
 .formContainer input:focus {
-  border:0px solid blue;
+  border:3px solid yellow;
 }

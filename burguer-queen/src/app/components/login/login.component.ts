@@ -1,6 +1,6 @@
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { catchError, debounceTime, throwError, VirtualTimeScheduler } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
@@ -65,12 +65,10 @@ export class LoginComponent implements OnInit {
     .subscribe({
       next: data => {
         sessionStorage.setItem('token',  JSON.stringify(data.accessToken));
-        sessionStorage.setItem('name',  JSON.stringify(data.name));
-        console.log(JSON.stringify(data))
-        console.log(JSON.stringify(data.id))
-        this.getUser(JSON.stringify(data.id))
+        sessionStorage.setItem('name',  JSON.stringify(data.name).replace(/['"]+/g, ''));
+        sessionStorage.setItem('userId', JSON.stringify(data.id));
 
-        this.router.navigate(['/state-orders']);
+        this.router.navigate(['/body']);
       },
       error: error => {
         this.error = true;
@@ -81,19 +79,6 @@ export class LoginComponent implements OnInit {
     })
 
   }
-
-  public getUser(id: string){
-    this.RestService.getUserById(id)
-    .subscribe({
-      next: data => {
-         console.log(data)
-      },
-      error: error => {
-         console.log(error)
-      }
-    })
-  }
-
 
   public clear(){
    this.loginForm.reset()

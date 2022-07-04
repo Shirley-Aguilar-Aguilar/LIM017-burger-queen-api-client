@@ -7,6 +7,7 @@ import { navbarData } from './nav-header';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  name = sessionStorage.getItem('name');
 
   constructor() { }
 
