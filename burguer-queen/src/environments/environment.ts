@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlBurguerQueen: 'https://burguerdeploymentv2.herokuapp.com',
+  urlBurguerQueen: 'https://burguer-api-labo-jul2022.herokuapp.com',
 };
 
 /*

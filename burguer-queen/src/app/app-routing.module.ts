@@ -6,11 +6,13 @@ import { StateOrdersComponent } from './components/state-orders/state-orders.com
 import { HeaderComponent } from './components/header/header.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProductsComponent } from './components/create-orders/products/products.component';
+import { BodyComponent } from './components/body/body.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
+
   },
   {
     path: 'create-orders',
@@ -28,7 +30,16 @@ const routes: Routes = [
     path: 'users',
     component: UsersComponent,
 
-  }
+  },
+  {
+    path: 'body',
+    component: BodyComponent,
+    children: [
+    {path: 'users',component: UsersComponent,},
+    {path: 'products',component: ProductsComponent, },
+  ],
+  },
+
 ];
 
 @NgModule({
