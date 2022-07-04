@@ -12,9 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
-    children: [{
-      path: 'body', component: BodyComponent,
-    }],
+
   },
   {
     path: 'create-orders',
@@ -32,7 +30,16 @@ const routes: Routes = [
     path: 'users',
     component: UsersComponent,
 
-  }
+  },
+  {
+    path: 'body',
+    component: BodyComponent,
+    children: [
+    {path: 'users',component: UsersComponent,},
+    {path: 'products',component: ProductsComponent, },
+  ],
+  },
+
 ];
 
 @NgModule({
