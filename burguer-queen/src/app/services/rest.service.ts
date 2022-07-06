@@ -11,17 +11,22 @@ export class RestService {
   public host:string = environment.urlBurguerQueen;
   token = sessionStorage.getItem('token');
 
+  httpOptions = () => (
+    {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'access-token': `${this.token!.replace(/['"]+/g, '')}`,
+      })
+    }
+  )
 
-  // obtener usuario por id
-  public getUserById(id:number){
-    const headers = new HttpHeaders().set('access-token',this.token!.replace(/['"]+/g, ''));
-    return this.http.get<any>(`${this.host}/users/${id}`, { headers })
-  }
+  public getById = (url:string,id:number) => this.http.get<any>(`${this.host}/${url}/${id}`, this.httpOptions());
 
+  public get = (url:string) => this.http.get<any>(`${this.host}/${url}`, this.httpOptions());
 
-  // obtener producto
-  public get(url:string){
-    const headers = new HttpHeaders().set("access-token", this.token!.replace(/['"]+/g, ''));
-    return this.http.get(this.host+url, { headers });
-  }
+  public post = (url:string, data:any) => this.http.post<any>(`${this.host}/${url}`,data, this.httpOptions());
+
+  public put = (url:string, data:any, id:number) => this.http.put<any>(`${this.host}/${url}/${id}`,data, this.httpOptions());
+
+  public delete = (url:string, id:number) => this.http.delete<any>(`${this.host}/${url}/${id}`, this.httpOptions());
 }
