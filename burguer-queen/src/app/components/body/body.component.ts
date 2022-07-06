@@ -17,7 +17,7 @@ export class BodyComponent implements OnInit {
   }
 
   public getUser(id: number){
-    this.RestService.getUserById(id)
+    this.RestService.getById('users', id)
     .subscribe({
       next: data => {
          console.log(data)

@@ -28,5 +28,5 @@ export class RestService {
 
   public put = (url:string, data:any, id:number) => this.http.put<any>(`${this.host}/${url}/${id}`,data, this.httpOptions());
 
-  public delete = (url:string, id:number) => this.http.put<any>(`${this.host}/${url}/${id}`, this.httpOptions());
+  public delete = (url:string, id:number) => this.http.delete<any>(`${this.host}/${url}/${id}`, this.httpOptions());
 }
