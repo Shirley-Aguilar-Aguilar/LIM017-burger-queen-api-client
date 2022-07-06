@@ -9,9 +9,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { CreateOrdersComponent } from './components/create-orders/create-orders.component';
 import { StateOrdersComponent } from './components/state-orders/state-orders.component';
 import { ProductsComponent } from './components/create-orders/products/products.component';
-import { UsersComponent } from './components/users/users.component';
+import { DialogDataExampleDialog, DialogIncorrect, DialogCorrect, UsersComponent } from './components/users/users.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BodyComponent } from './components/body/body.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -22,14 +25,21 @@ import { BodyComponent } from './components/body/body.component';
     StateOrdersComponent,
     ProductsComponent,
     UsersComponent,
-    BodyComponent
+    BodyComponent,
+    DialogDataExampleDialog,
+    DialogIncorrect,
+    DialogCorrect
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularMaterialModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
