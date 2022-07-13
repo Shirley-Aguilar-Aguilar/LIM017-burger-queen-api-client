@@ -16,10 +16,7 @@ const routes: Routes = [
 
   },
 
-  {
-    path: 'state-orders',
-    component: StateOrdersComponent
-  },
+
   {
     path: 'users',
     component: UsersComponent,
@@ -33,6 +30,7 @@ const routes: Routes = [
     {path: 'productsCrud',component: ProductscrudComponent, },
     {path: 'products',component: ProductsComponent, },
     {path: 'create-orders', component: CreateOrdersComponent,},
+    {path: 'state-orders',component: StateOrdersComponent},
   ],
   },
 
