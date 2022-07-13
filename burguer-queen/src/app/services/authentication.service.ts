@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { User } from '../models/user.model.data';
+//import { User } from '../models/user.model.data';
 import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable({
@@ -9,8 +9,8 @@ import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 })
 export class AuthenticationService {
 
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  //private currentUserSubject: BehaviorSubject<User>;
+  //public currentUser: Observable<User>;
 
   constructor(private http: HttpClient) {
   }
