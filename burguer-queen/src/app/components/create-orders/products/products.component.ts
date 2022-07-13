@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ServiceOutputService } from '../../../services/service-output.service';
-import {RestService} from "../../../services/rest.service";
-import Product from "../../interfaces/product";
 
 @Component({
   selector: 'app-products',
@@ -11,20 +9,15 @@ import Product from "../../interfaces/product";
 export class ProductsComponent implements OnInit {
   @Input() product:any;
   public cant:number = 0;
-
-  products: Product[];
-
-  constructor(private restService: RestService) { }
+  constructor(private serviceOutput: ServiceOutputService) { }
 
   ngOnInit(): void {
-    this.getProducts();
   }
 
-  getProducts(){
-    this.restService.get('products')
-      .subscribe(data => {
-        this.products = data;
-      })
+  public addOrder(product:any){
+    product.productid = product.id;
+    product.qty = this.cant;
+    this.serviceOutput.triggerOutput.emit(product);
   }
 
 }
