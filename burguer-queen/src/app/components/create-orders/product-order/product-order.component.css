@@ -1,0 +1,16 @@
+.divOrder{
+  display: grid;
+  width: 30vh;
+  padding-top: 2vh;
+  grid-template: [r1a] "c   a   a"  1fr 
+                 [r2a] "c   b   b"  1fr
+                  / [c1] 30% ;
+  }
+  .title-products{grid-area:a}
+  .price-products{grid-area:b}
+  .img-responsive{grid-row: r1a / r2b;}
+  
+  .img-responsive{
+    width: 8vh;
+    height: 7vh;
+  }

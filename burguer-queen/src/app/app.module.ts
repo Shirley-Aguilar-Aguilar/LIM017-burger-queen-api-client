@@ -15,6 +15,7 @@ import { BodyComponent } from './components/body/body.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ProductOrderComponent } from './components/create-orders/product-order/product-order.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     BodyComponent,
     DialogDataExampleDialog,
     DialogIncorrect,
-    DialogCorrect
+    DialogCorrect,
+    ProductOrderComponent
   ],
   imports: [
     BrowserModule,
