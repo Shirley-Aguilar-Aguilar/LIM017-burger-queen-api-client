@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Pacifico&family=Sanchez:ital@1&display=swap');
 .card-products {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* background-color:rgba(255, 255, 255, 0.863) ; */
+  background-color:rgb(255, 255, 255);
+  font-family: 'Amaranth', sans-serif;
   transition: 0.3s;
   border-radius: 5px;
   display: flex;
@@ -35,7 +39,7 @@
 }
 
 .title-products {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   padding: 0.2rem 0.2rem;
 }
