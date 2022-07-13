@@ -1,16 +1,38 @@
 <div class="loginContainer">
-    <div class="formContainer">
+    <div class="formContainer" >
         <img src="../../assets/logo2.png" alt="logo">
         <h2>Iniciar Sesión</h2>
-        <form>
-            <label>Ingrese su correo</label>
-            <br/>
-            <input placeholder="example@gmail.com"/>
-            <br/>
-            <label>Ingrese su contraseña</label>
-            <br/>
-            <input placeholder="contraseña"/>
+        <form [formGroup]="loginForm" novalidate   (ngSubmit)="save($event)">
+
+            <!--validación de envio-->
+            <div *ngIf="error">
+              <p class="messageError">Credenciales son invalidas</p>
+            </div>
+            <div>
+              <p>Ingrese su correo</p>
+            <input type="email" name ="email" placeholder="example@gmail.com" formControlName="email" />
+            </div>
+            <!--validación del correo-->
+            <div *ngIf="emailField!.errors && emailField!.touched ">
+              <p *ngIf="emailField!.hasError('required')" class="messageError" >El campo es requerido</p>
+              <p *ngIf="emailField!.hasError('email')" class="messageError" >Ingrese correo valido</p>
+            </div>
+
+            <div>
+              <p>Ingrese su contraseña</p>
+              <input type="password" name ="password" autocomplete="on"  placeholder="contraseña" formControlName="password"/>
+            </div>
+            <!--validación de la contraseña-->
+            <div *ngIf="passwordField!.errors && passwordField!.touched ">
+              <p *ngIf="passwordField!.hasError('required')" class="messageError">El campo es requerido</p>
+              <p *ngIf="passwordField!.hasError('minlength')" class="messageError">Ingrese mínimo 6 carácteres</p>
+            </div>
+
+
+            <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+            <button type="button" (click)="clear()">Limpiar</button>
+
         </form>
-        <button>Ingresar</button>
+
     </div>
 </div>
