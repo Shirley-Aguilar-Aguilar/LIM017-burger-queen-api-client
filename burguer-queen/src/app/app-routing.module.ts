@@ -15,14 +15,7 @@ const routes: Routes = [
     component: LoginComponent,
 
   },
-  {
-    path: 'create-orders',
-    component: CreateOrdersComponent,
-    children: [{
-      path: 'products',
-      component: ProductsComponent,
-    }]
-  },
+
   {
     path: 'state-orders',
     component: StateOrdersComponent

@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
     this.AuthenticationService.login(email, password)
     .subscribe({
       next: data => {
-        sessionStorage.setItem('token',  JSON.stringify(data.accessToken));
+        sessionStorage.setItem('token',  JSON.stringify(data.accessToken).replace(/['"]+/g, ''));
         sessionStorage.setItem('name',  JSON.stringify(data.name).replace(/['"]+/g, ''));
         sessionStorage.setItem('userId', JSON.stringify(data.id));
 

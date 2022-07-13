@@ -15,7 +15,7 @@ export class RestService {
     {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'access-token': `${this.token!.replace(/['"]+/g, '')}`,
+        'access-token': `${this.token}`,
       })
     }
   )
