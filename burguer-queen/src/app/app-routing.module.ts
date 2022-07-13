@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProductsComponent } from './components/create-orders/products/products.component';
 import { BodyComponent } from './components/body/body.component';
+import { ProductscrudComponent } from './components/productscrud/productscrud.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
     component: BodyComponent,
     children: [
     {path: 'users',component: UsersComponent,},
-    {path: 'products',component: ProductsComponent, },
+    {path: 'products',component: ProductscrudComponent, },
   ],
   },
 
