@@ -18,6 +18,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { ProductOrderComponent } from './components/create-orders/product-order/product-order.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     BodyComponent,
     DialogDataExampleDialog,
     DialogIncorrect,
-    DialogCorrect
+    DialogCorrect,
+    ProductOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,13 @@
 <div class="card-products">
-  <img class="img-responsive" src="{{products.image}}">
+  <img class="img-responsive" src="{{product.image}}">
   <hr>
   <div class="detail-products">
-    <span class="title-products">{{products.name}}</span>
-    <span class="price-products">S/ {{products.price}}</span>
+    <span class="title-products">{{product.name}}</span>
+    <span class="price-products">S/ {{product.price}}</span>
     <div class="box-products">
-      <button class="button-products">-</button>
-      <input class="input-products" value="0">
-      <button class="button-products">+</button>
+      <button class="button-products" (click)= "cant===0?0:cant=cant-1; addOrder(product)">-</button>
+      <input class="input-products" value={{cant}} (change)="addOrder(product)">
+      <button class="button-products" (click)= "cant=cant+1; addOrder(product)">+</button>
     </div>
   </div>
 </div>

@@ -37,7 +37,9 @@ const routes: Routes = [
     component: BodyComponent,
     children: [
     {path: 'users',component: UsersComponent,},
-    {path: 'products',component: ProductscrudComponent, },
+    {path: 'productsCrud',component: ProductscrudComponent, },
+    {path: 'products',component: ProductsComponent, },
+    {path: 'create-orders', component: CreateOrdersComponent,},
   ],
   },
 

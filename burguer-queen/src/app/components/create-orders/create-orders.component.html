@@ -1,6 +1,48 @@
-<app-header></app-header>
-<p>create-orders works!</p>
-<div class="list-products">
-  <app-products [products]="products" *ngFor="let products of listProducts"></app-products>
-</div>
+<mat-drawer-container class="create-container" autosize>
+ 
+  <div class="create-sidenav-content">
+    
+    <div class = "listTypeProducts">
+      <div class = "listCarOrder">
+        <button type="button" mat-button (click)="drawer.toggle()">
+          Orden <img src="../../../assets/car.png">
+        </button>
+      </div>
+      <br>
+      <h2>Productos</h2>
+      <ul>
+        <li *ngFor="let data of navData">
+            <a (click)="filterProducts(data.Type)">
+                <!--<i [class]="data.icon"></i>-->
+                <span>{{data.label}}</span>
+            </a>
+        </li>
+    </ul>
+    </div>
+    <div class="list-products">
+      <app-products [product]="products" *ngFor="let products of listProducts"></app-products>
+    </div>
+    
+  </div>
+
+  <mat-drawer #drawer class="create-sidenav" mode="side"  opened="true" position="end">
+    <div class = "createOrder">
+      <form [formGroup]="formCreateOrder" novalidate   (ngSubmit)="save($event)">
+        <h2>Crear Orden</h2>
+   
+        <p>Cliente</p>
+        <input formControlName="client"/>
+             <!--validación del nombre-->
+             <div *ngIf="clientField!.errors && clientField!.touched ">
+              <p *ngIf="clientField!.hasError('required')" class="messageError" >El campo es requerido</p>
+            </div>
+            <app-product-order [product]="products" *ngFor="let products of formCreateOrder.value.products"></app-product-order>
+        <br>
+        <button type="submit">Crear Orden</button>
+      </form>
+    </div>
+    
+  </mat-drawer>
+
+</mat-drawer-container>
 
