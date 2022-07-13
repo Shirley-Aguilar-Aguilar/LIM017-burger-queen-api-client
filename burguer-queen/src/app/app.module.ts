@@ -15,6 +15,9 @@ import { BodyComponent } from './components/body/body.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import {MatDialogModule} from '@angular/material/dialog';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ProductOrderComponent } from './components/create-orders/product-order/product-order.component';
 
 @NgModule({
@@ -41,6 +44,8 @@ import { ProductOrderComponent } from './components/create-orders/product-order/
     AngularMaterialModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
 
   ],
   providers: [],
