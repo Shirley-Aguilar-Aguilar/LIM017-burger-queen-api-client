@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CreateOrdersComponent } from './components/create-orders/create-orders.component';
+import { CreateOrdersComponent, DialogCorrect, DialogIncorrect } from './components/create-orders/create-orders.component';
 import { StateOrdersComponent } from './components/state-orders/state-orders.component';
 import { ProductsComponent } from './components/create-orders/products/products.component';
-import { DialogDataExampleDialog, DialogIncorrect, DialogCorrect, UsersComponent } from './components/users/users.component';
+import { UsersComponent } from './components/users/users.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BodyComponent } from './components/body/body.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +18,10 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ProductOrderComponent } from './components/create-orders/product-order/product-order.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { DialogCreateUser } from './components/users/createUserDialog/dialogCreateUser.component';
+import { DialogUpdateUser } from './components/users/createUserDialog/dialogUpdateUser.component';
+import { DialogData } from './components/dialogs/dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +33,12 @@ import { ProductOrderComponent } from './components/create-orders/product-order/
     ProductsComponent,
     UsersComponent,
     BodyComponent,
-    DialogDataExampleDialog,
+    DialogData,
     DialogIncorrect,
     DialogCorrect,
-    ProductOrderComponent
+    ProductOrderComponent,
+    DialogCreateUser,
+    DialogUpdateUser
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { ProductOrderComponent } from './components/create-orders/product-order/
     MatDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
+    FlexLayoutModule
 
   ],
   providers: [],
