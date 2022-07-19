@@ -25,11 +25,11 @@ export class CreateOrdersComponent implements OnInit {
     this.serviceOutput.triggerOutput.subscribe(data => {
       if(!this.formCreateOrder.value.products.includes(data)){
         this.formCreateOrder.value.products.push(data);
+        console.log(data);
       }
       else if (data.qty === 0) {
         this.formCreateOrder.value.products = this.formCreateOrder.value.products.filter((product:any) => product.id!==data.id);
       }
-      console.log(this.formCreateOrder.value);
     })
   }
 
