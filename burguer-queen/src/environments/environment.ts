@@ -13,6 +13,7 @@ export const environment = {
     messagingSenderId: '702056466594',
   },
   production: false,
+  //urlBurguerQueen:'http://localhost:8080',
   urlBurguerQueen: 'https://burguer-api-labo-jul2022.herokuapp.com',
 };
 

@@ -4,7 +4,7 @@ export const navbarData = [
         label:'Usuarios'
     },
     {
-        routeLink:'products',
+        routeLink:'productsCrud',
         label:'Productos'
     },
     {

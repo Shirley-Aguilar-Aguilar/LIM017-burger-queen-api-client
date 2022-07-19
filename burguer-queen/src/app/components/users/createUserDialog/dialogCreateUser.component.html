@@ -1,0 +1,48 @@
+<div  mat-dialog-title>
+  <h2>Crear usuario</h2>
+</div>
+<div class = "createUser"  mat-dialog-content>
+
+  <form [formGroup]="formCreateUser" novalidate   (ngSubmit)="save($event)">
+
+
+    <p>Nombre</p>
+    <input formControlName="name"/>
+         <!--validación del nombre-->
+         <div *ngIf="nameField!.errors && nameField!.touched ">
+          <p *ngIf="nameField!.hasError('required')" class="messageError" >El campo es requerido</p>
+        </div>
+
+    <p>Correo</p>
+      <input type="email" formControlName="email" name="email"/>
+        <!--validación del correo-->
+      <div *ngIf="emailField!.errors && emailField!.touched ">
+        <p *ngIf="emailField!.hasError('required')" class="messageError" >El campo es requerido</p>
+        <p *ngIf="emailField!.hasError('email')" class="messageError" >Ingrese correo valido</p>
+      </div>
+
+    <p>Password</p>
+      <input type="password" formControlName="password" name="password"/>
+        <!--validación de la contraseña-->
+        <div *ngIf="passwordField!.errors && passwordField!.touched ">
+          <p *ngIf="passwordField!.hasError('required')" class="messageError">El campo es requerido</p>
+          <p *ngIf="passwordField!.hasError('minlength')" class="messageError">Ingrese mínimo 6 carácteres</p>
+        </div>
+
+    <p>Rol del trabajador</p>
+      <select  formControlName="userRolId">
+        <option value=1 >Administrador</option>
+        <option value=2 >Cocinero</option>
+        <option value=3 >Mesero</option>
+      </select>
+
+      <div mat-dialog-actions>
+        <button mat-button type="submit">Crear</button>
+        <button mat-button (click)="onNoClick()">Cerrar</button>
+      </div>
+    </form>
+</div>
+
+
+
+

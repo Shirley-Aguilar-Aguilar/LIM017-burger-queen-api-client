@@ -1,0 +1,19 @@
+:host {
+  border:0;
+  font-size:20px;
+  text-align:center;
+  border-radius: 8px;
+  font-family: 'Gill Sans MT', sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position: relative;
+}
+
+button{
+  background-color:black;
+  color:white;
+  font-size:15px;
+}
+button:hover{background-color:red;}

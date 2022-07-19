@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  border:0;
+  font-size:17px;
+  text-align:center;
+  border-radius: 8px;
+  font-family: 'Amaranth', sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+button{
+  background-color:black;
+  color:white;
+  font-size:15px;
+}
+button:hover{background-color:red;}
+.createUser,
+.createUser form{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Amaranth', sans-serif;
+}
+
+.createUser form input,
+.createUser form select {
+  padding: 3%;
+  border:2px solid #263238;
+}
+
+.createUser form div button {
+  margin: 0px 5px;
+  border:0;
+  background-color:#263238;
+
+  border-radius: 10px;
+  color:white;
+}
+.messageError {
+  color:red;
+  border:0;
+  padding:0;
+}
+
