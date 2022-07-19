@@ -6,7 +6,7 @@
     <span class="price-products">S/ {{product.price}}</span>
     <div class="box-products">
       <button class="button-products" (click)= "cant===0?0:cant=cant-1; addOrder(product)">-</button>
-      <input class="input-products" value={{cant}} (change)="addOrder(product)">
+      <input class="input-products" type="number" [(ngModel)]="cant" (change)="cant=cant; addOrder(product)">
       <button class="button-products" (click)= "cant=cant+1; addOrder(product)">+</button>
     </div>
   </div>
